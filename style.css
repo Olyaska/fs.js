@@ -1,0 +1,28 @@
+.card {
+    width: 1080px; 
+    height: 540px; 
+    border: 1px solid #ccc;
+    margin: 20px auto; padding: 0px;
+    background-repeat: no-repeat;
+    background-position: right 0;
+    display: flex;
+}
+.score {
+    width: 1080px;
+    margin: 10px auto;
+}
+/* .card {
+    display: flex;
+    margin: 40px 20px;
+} */
+.buttons {
+    display: flex;
+}
+/* .img {
+    height: 200px;
+    min-width: 400px;
+    width: 50%;
+    background: #ddd;
+} */
+object { width: 26px; height: 26px; }
+td.icon { width: 26px; }
