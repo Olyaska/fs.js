@@ -18,6 +18,20 @@
 .buttons {
     display: flex;
 }
+
+.answer {
+    position: relative;
+    margin-left: 2em;
+    padding: 1em;
+}
+.icon {
+    position: absolute;
+    top: 0;
+    left: -2em;
+}
+.radio > label {
+    padding: 1em;
+}
 /* .img {
     height: 200px;
     min-width: 400px;
