@@ -47,35 +47,23 @@ function createBody(card) {
         return answers
     }        
 }
-
-function createIconTrue() {
-  return `<div class="icon">
-            <object data="img/icons/right.svg" type="image/svg+xml"></object>
-          </div>`
-}
-function createIconFalse() {
-  return `<div class="icon">
-            <object data="img/icons/wrong.svg" type="image/svg+xml"></object>
-          </div>`
-}
 function checkIcon(card, i) {
   if (card.user_answer) {
     if (i === +card.r_ans) {
-      return createIconTrue()
+      return 'right'
     }
     if (+card.user_answer === i) {
             if (card.user_answer === card.r_ans) {
-        return createIconTrue()
+        return 'right'
       } else {
-        return createIconFalse()
+        return 'wrong'
       }
     }
   }
 }
 function createAnswer (card, i) {
     return `
-    <div class="answer">
-        ${checkIcon(card, i) || ''}
+    <div class="answer ${checkIcon(card, i) || ''}">
         <label for="${i}" class="radio">    
             <input type="radio" name="r" id="${i}" ${isRight(card, i)} ${isChecked (card, i)}>      
             <span>${card.body_c[i]}</span>
@@ -133,7 +121,7 @@ function checkAnswer () { //Проверка правильного ответа
     let input = document.querySelector('input[data-ans="1"]');
     const parent = document.querySelector('.answers')
     if (input.checked == true) { //если отмечен правильный импут
-        parent.childNodes[+input.id + 1].insertAdjacentHTML('afterbegin', createIconTrue())
+        parent.children[+input.id].classList.add('right')
         console.log('right');
         // document.querySelector(`object[data-svg="${input.id}"]`).style.display = 'block'
     // score++; // прибавить 1 балл

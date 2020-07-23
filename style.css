@@ -7,6 +7,24 @@
     background-position: right 0;
     display: flex;
 }
+.right, .wrong {
+    position: relative;
+}
+.right:before, .wrong:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1em;
+    left: 0;
+    height: 22px;
+    width: 22px;
+}
+.right:before {
+    background: url("./img/icons/right.svg") no-repeat;
+}
+.wrong:before {
+    background: url("./img/icons/wrong.svg") no-repeat;
+}
 .score {
     width: 1080px;
     margin: 10px auto;
@@ -21,15 +39,11 @@
 
 .answer {
     position: relative;
-    margin-left: 2em;
+    margin-left: 1em;
     padding: 1em;
 }
-.icon {
-    position: absolute;
-    top: 0;
-    left: -2em;
-}
-.radio > label {
+
+.radio {
     padding: 1em;
 }
 /* .img {
